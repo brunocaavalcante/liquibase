@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.4.xsd ">
+
+    <changeSet id="1" author="Bruno Cavalcante">
+        <createTable tableName="person">
+            <column name="id" type="java.sql.Types.INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="java.sql.Types.VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address1" type="java.sql.Types.VARCHAR(50)"/>
+            <column name="address2" type="java.sql.Types.VARCHAR(50)"/>
+            <column name="city" type="java.sql.Types.VARCHAR(30)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="Bruno Cavalcante">
+        <createTable tableName="company">
+            <column name="id" type="java.sql.Types.INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="java.sql.Types.VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address1" type="java.sql.Types.VARCHAR(50)"/>
+            <column name="address2" type="java.sql.Types.VARCHAR(50)"/>
+            <column name="city" type="java.sql.Types.VARCHAR(30)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="Bruno Cavalcante">
+        <addColumn tableName="person">
+            <column name="country" type="java.sql.Types.VARCHAR(2)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="versao_1" author="Bruno Cavalcante">
+        <tagDatabase tag="versao_1"/>
+    </changeSet>
+</databaseChangeLog>
